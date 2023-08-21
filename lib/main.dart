@@ -9,13 +9,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Projeto Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        scaffoldBackgroundColor: Colors.white70
-      ),
-      home: const MyHomePage(title: 'Primeiro Projeto Flutter'),
+      home: MyHomePage(title: 'Primeiro Projeto Flutter'),
     );
   }
 }
@@ -42,26 +38,35 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(227, 25, 24, 1),
         title: Text(widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Você apertou o botão essa quantidade de vezes:',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14)),
+            const Text('Você apertou o botão essa quantidade de vezes:',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15)),
             Text(
               '$_counter',
-                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 40),
+              style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton(backgroundColor: const Color.fromRGBO(227, 25, 24, 1),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
       ),
     );
   }
